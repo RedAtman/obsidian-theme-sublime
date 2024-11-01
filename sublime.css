@@ -1,0 +1,219 @@
+body {
+    /* --text-normal: red; */
+    /* --font-default: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-monospace-default: ui-monospace, SFMono-Regular, "Cascadia Mono", "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", Menlo, Monaco, "Consolas", "Source Code Pro", monospace;
+  --font-interface-override: '??';
+  --font-interface-theme: '??';
+  --font-interface: var(--font-interface-override), var(--font-interface-theme), var(--default-font, '??'), var(--font-default);
+  --font-text-override: '??';
+  --font-text-theme: '??';
+  --font-text: var(--font-text-override), var(--font-text-theme), var(--font-interface);
+  --font-print-override: '??';
+  --font-print: var(--font-print-override), var(--font-text-override), var(--font-text-theme), 'Arial';
+  --font-monospace-override: '??';
+  --font-monospace-theme: '??';
+  --font-monospace: var(--font-monospace-override), var(--font-monospace-theme), var(--font-monospace-default);
+  --font-text-size: 16px;
+  --font-mermaid: var(--font-text); */
+    /*    font-family: var(--font-text)!important;*/
+    --code-size: var(--font-smaller);
+
+
+    --font-default: Menlo, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+    --font-monospace-default: Menlo, ui-monospace, SFMono-Regular, "Cascadia Mono", "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", Menlo, Monaco, "Consolas", "Source Code Pro", monospace;
+    --font-text-theme: none;
+    /* --font-interface-theme: "Recursive S"; */
+    ;
+    /*    --font-heading-theme: "Optima", "Recursive S";*/
+    --font-heading-theme: var(--font-default);
+    --heading-letter-spacing: 0em;
+    --font-interface: Menlo;
+    --font-text: var(--font-interface);
+
+    --heading-scaling: 1;
+
+    --h1-font: var(--font-heading-theme);
+    --h2-font: var(--font-heading-theme);
+    --h3-font: var(--font-heading-theme);
+    --h4-font: var(--font-heading-theme);
+    --h5-font: var(--font-heading-theme);
+    --h6-font: var(--font-heading-theme);
+    --h1-size: calc(1em*var(--heading-scaling));
+    /* --h2-size: calc(1.5em*var(--heading-scaling)); */
+    --h2-size: calc(1em*var(--heading-scaling));
+    --h3-size: calc(1em*var(--heading-scaling));
+    --h4-size: calc(1em*var(--heading-scaling));
+    --h5-size: calc(1em*var(--heading-scaling));
+    --h6-size: calc(1em*var(--heading-scaling));
+    /*    --file-line-width: 700px;*/
+    --file-line-width: 100%;
+    --file-margins: var(--size-1-2);
+    --line-height-normal: 1.2;
+
+    --nav-item-size: var(--font-ui-small);
+
+    --code-size: var(--font-medium);
+    --footnote-size: var(--font-small);
+
+
+    /*    --thin-muted-border: 1px solid var(--muted-border-color);*/
+    --thin-muted-border: 0 solid var(--muted-border-color);
+    --codeblock-border: var(--thin-muted-border);
+    --codeblock-roundness: var(--radius-s);
+    --code-block-alt-bg: var(--bg5);
+    --slight-code-roundish: var(--radius-xs);
+}
+
+
+/*main menu*/
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+    opacity: 1;
+}
+
+
+
+/*无序列表*/
+.list-bullet {
+    color: var(--list-marker-color);
+}
+
+.list-bullet:before {
+    content: none;
+}
+
+.list-bullet:after {
+    content: none;
+}
+
+
+
+/*header*/
+/* .theme-dark {
+    --alt-heading-color: #8c96d9;
+    --alt-heading-color: var(--text-on-accent);
+} */
+
+/*.cm-header{
+    font-family: var(--font-text)!important;
+    color: var(--text-on-accent);
+}*/
+/*header #*/
+.cm-formatting-header {
+    display: none;
+}
+
+.cm-header:before {
+    /*    color: var(--color-green);*/
+    /*    color: var(--text-faint);*/
+    /*    color: var(--secondary-accent);*/
+    /*    color: var(--color-yellow);*/
+    color: var(--color-orange);
+}
+
+.cm-header-1:before {
+    content: "# ";
+}
+
+.cm-header-2:before {
+    content: "## ";
+}
+
+.cm-header-3:before {
+    content: "### ";
+}
+
+.cm-header-4:before {
+    content: "#### ";
+}
+
+.cm-header-5:before {
+    content: "##### ";
+}
+
+.cm-header-6:before {
+    content: "###### ";
+}
+
+.cm-header-7:before {
+    content: "####### ";
+}
+
+/*header style*/
+body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
+body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+    /* background-color: var(--bg4);
+    border: var(--thin-border); */
+    border: none;
+    /*    border-radius: var(--radius-s);*/
+    border-radius: 0;
+    padding: .2em;
+    /* padding-left: 6px; */
+    padding-left: .1em;
+}
+
+
+
+
+/*codeblock*/
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
+    padding-left: 1.8em;
+}
+
+/*codeblock counter*/
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end):before {
+    width: 1.2em;
+    padding-right: .8em;
+}
+
+
+/*refer*/
+body .HyperMD-footnote.cm-line.cm-line,
+.footnotes.footnotes li {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote {
+    /* cursor: text;
+    display: inline-block;
+    font-size: var(--font-smallest);
+    position: relative; */
+    font-size: inherit;
+    top: 0;
+    /* color: var(--text-muted); */
+}
+
+
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+    padding: 0 .4em;
+}
+
+
+/*TagFolder*/
+.cm-hashtag {
+    /*  background-color: rgba(32, 134, 55, .2);*/
+    background-color: rgba(70, 172, 73, .5);
+    /* color: rgb(232, 230, 227); */
+    /* color: rgba(99,73,17,1); */
+    color: rgb(240, 198, 38);
+    /*  border-radius: 2px!important;*/
+    padding: 2px 0;
+    line-height: calc(1.4 * var(--line-height-normal));
+}
+
+.cm-hashtag-begin {
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+}
+
+.cm-hashtag-begin:before {
+    padding-left: 2px;
+    content: "";
+}
+
+.cm-hashtag-end:after {
+    padding-right: 10px;
+    padding-left: 0px;
+    content: "";
+}
